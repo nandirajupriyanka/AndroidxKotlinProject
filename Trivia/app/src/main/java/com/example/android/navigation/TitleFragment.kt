@@ -3,14 +3,12 @@ package com.example.android.navigation
 
 import android.os.Bundle
 import android.view.*
-import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.android.navigation.databinding.FragmentTitleBinding
-import kotlinx.android.synthetic.main.fragment_title.view.*
 
 class TitleFragment : Fragment() {
 
@@ -18,12 +16,12 @@ class TitleFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val binding = DataBindingUtil.inflate<FragmentTitleBinding>(inflater, R.layout.fragment_title, container, false)
 
-        /* Basic way of navigating
+        /*Basic way of navigating
         binding.playButton.setOnClickListener { view: View ->
             view.findNavController() // Gets instance of navigation controller
-                    .navigate(R.id.action_titleFragment_to_gameFragment) // Navigate to Game Fragment
-        }
-        */
+                    .navigate(TitleFragmentDirections.actionTitleFragmentToGameFragment()) // Navigate to Game Fragment
+        }*/
+
 
         binding.playButton.setOnClickListener (
                 Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_gameFragment)
